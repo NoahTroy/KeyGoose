@@ -35,4 +35,20 @@ Depending on where you bought your microcontroller, it may already come with a b
 > Please note: There are many other ways to flash the microcontroller, so if you'd prefer to use another method, feel free to do so!
 
 In order to begin flashing the microcontroller with the Raspberry Pi, it's important to first identify the correct General Purpose Input Output pins to use. Lookup the pinout diagram for your microcontroller. The pinout of the Raspberry Pi can be found [here](https://pinout.xyz/# "here"). If you are using the Beetle that I used, then you may use the image below as a reference. I also found [this online article](https://ozzmaker.com/program-avr-using-raspberry-pi-gpio/ "this online article") to be extremely helpful.
+
 ![Raspberry Pi GPIO Photo](https://raw.githubusercontent.com/NoahTroy/KeyGoose/master/Raspberry%20Pi%20GPIO%20Photo.jpg "Raspberry Pi GPIO Photo")
+
+Once we have the wiring all set, our next step is to dowload and install *avrdude* on the Raspberry Pi. This can be done by running:
+`sudo apt install avrdude`
+Now that avrdude is installed, it's important to edit the configuration file to support flashing over GPIO. Open the configuration file (`sudo nano /etc/avrdude.conf`) and find the commented-out programmer section with the ID: "linuxgpio". You're going to want to uncomment this entire section and replace the question marks with the values 4, 11, 10, and 9, in that order, to tell avrdude which GPIO pins to use. The uncommented section should now look like this:
+```
+programmer
+  id    = "linuxgpio";
+  desc  = "Use the Linux sysfs interface to bitbang GPIO lines";
+  type  = "linuxgpio";
+  reset = 4;
+  sck   = 11;
+  mosi  = 10;
+  miso  = 9;
+;
+```
