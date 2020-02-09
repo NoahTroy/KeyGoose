@@ -52,3 +52,5 @@ programmer
   miso  = 9;
 ;
 ```
+
+> These instructions are not yet complete. Please be patient, as they will be updated soon.
