@@ -65,7 +65,9 @@ After you're certain that you have the correct match-up, strip the USB cabling a
 Finally, use the files to grind-out a spot within the keyboard to place the microcontroller. If you managed to get a keyboard that supports a battery, I recommend placing the microcontroller there, as there should be plenty of room, and you won't obstruct the normal operation of the keyboard.
 
 ##### Step 3
-Enjoy! Just make sure that if you decide to use this keyboard to prank friends, family, or others, you do so responsibly. Make sure you always have the necessary permissions first, for if used improperly, you could have hacking charges filed against you.
+Enjoy! Just make sure that if you decide to use this keyboard to prank friends, family, or others, you do so responsibly, and you always have the necessary permissions first. If used improperly, you could have hacking charges filed against you.
+
+> ##### If you do end up using this program, make sure you head over to Desktop Goose's [download page](https://samperson.itch.io/desktop-goose "Desktop Goose Game") first, and leave a tip for the developer. I did not create this game, and we owe all of the fun of this project to them. Out of respect to the developer, the Desktop Goose game installed by this code is an out of date version. If you wish to install the latest version, feel free to get it from the [download page](https://samperson.itch.io/desktop-goose "Desktop Goose Game"), and give your thanks to the developer.
 
 ## How Does KeyGoose Work?
 
