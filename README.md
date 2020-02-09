@@ -14,7 +14,7 @@
 - A USB Keyboard
 	- I recommend getting the cheapest keyboard you can find on Amazon. Not only will this bring-down the cost, but the cheaper keyboards tend to be more maleable and made of a weaker plastic, making the keyboard easier to manipulate when it comes to squeezing-in the microcontroller.
 	- I also found that getting a keyboard that has a battery option was ideal, as it left a nice, open area in which to embed the microcontroller.
-- A MicroController with USB Support
+- A Microcontroller with USB Support
 	- Any microcontroller should do, as long as it is small-enough and supports USB. In this project, I used a *Beetle ATmega32u4 Development Board*
 - General Tools
 	- Raspberry Pi with GPIO wires
