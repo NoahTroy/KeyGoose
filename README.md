@@ -52,5 +52,12 @@ programmer
   miso  = 9;
 ;
 ```
+At this point, we are ready to flash the microcontroller. I was using an ATmega32U4 (the Beetle). If you are as well, then the following command should work just fine. If not, then make sure to modify the command appropriately for your hardware:
+`sudo avrdude -c linuxgpio -p atmega32u4 -v -U flash:w:KeyGoose.hex`
+If you wish to flash the Driveby version of KeyGoose, be sure to replace `KeyGoose.hex` with `DrivebyGoose.hex`, in the command above.
+Congratulations, you have now successfully flashed the microcontroller!
 
-> These instructions are not yet complete. Please be patient, as they will be updated soon.
+##### Step 2
+Before I share how I went about wiring the Keyboard and the microcontroller together, let me be clear: *I am not an electrical engineer. I can almost guarentee you that there is probably a better, more-technical way to do this. Although everything ended-up working fine for me, there's always the chance that this could be harmful to your devices. Proceed at your own risk.*
+
+Alright, before we get to any of the soldering, the most important thing is to carefully open-up the keyboard, and identify where the USB controller is. Make sure you're looking for the point where the USB cable is *first* soldered into the PCB. For your sake, hopefully the keyboard manufacturer followed standards, labeling their PCB and correctly color-coding the wires. Right now, your job is to identify which of the four solder points matches with which of the four (USB) pins on your microcontroller. If you're having trouble figuring it out, [this article](https://www.electroschematics.com/usb-how-things-work/ "this article") may help. You may also rewatch the [YouTube video](http://KeyGoose.HackedBy.Me "YouTube video") to see how I did it.
